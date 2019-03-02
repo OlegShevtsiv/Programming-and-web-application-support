@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Raleway');
 body
 {
-  background-color: #ceeadf;
-  font-family: "Lato";
+  background-color: #d2d2d2;
+  font-family: 'Lato';
   font-weight: 400;
   font-size: 16px;
   color: #0d102f;
@@ -13,9 +13,9 @@ body
 
 h1, h2, h3, h4, h5, h6
 {
-  font-family: "Raleway";
+  font-family: 'Raleway';
   font-weight: 400;
-  color: #555;
+  color: #121212;
 }
 
 p
@@ -32,12 +32,47 @@ p
 a
 {
   color: #f85c37;
-
 }
 
 a:hover, a:focus
 {
-  color: #7b7b7b;
+  color:#7b7b7b;
   text-decoration: none;
   outline: 0;
+}
+
+hr
+{
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid: #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.navbar
+{
+  font-weight: 700;
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+.navbar-inverse
+{
+  background: #2d2d2d;
+  border-color: #2d2d2d;
+}
+
+.navbar-inverse .navbar-brand
+{
+  color: #999;
+  font-weight: bolder;
+  font-size: 22px;
+}
+
+.navbar-inverse .navbar-nav > .active > a
+{
+  background-color: #ff7878;
 }
