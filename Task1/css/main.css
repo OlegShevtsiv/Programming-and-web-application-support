@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Raleway');
 body
 {
+  background: url(../image/Mercedes-Benz-background.png) no-repeat center;
+  background-position: center center;
+	background-attachment:fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
   background-color: #d2d2d2;
   font-family: 'Lato';
   font-weight: 400;
@@ -8,7 +17,7 @@ body
   color: #0d102f;
   -webkit-font-smoothing: antialiased;
   -webkit-oweflow-scrollng: touch;
-  margin-top: 50px;
+  margin-top: 90px;
 }
 
 h1, h2, h3, h4, h5, h6
@@ -41,16 +50,6 @@ a:hover, a:focus
   outline: 0;
 }
 
-/* hr
-{
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid: #ccc;
-  margin: 1em 0;
-  padding: 0;
-} */
-
 .navbar
 {
   background:#5d5d5d;
@@ -67,7 +66,6 @@ a:hover, a:focus
 }
 .navbar-brand:hover{
   color: #c7c7c7;
-  text-decoration:;
 }
 .nav-link , .navbar-brand{
   color: #f4f4f4;
@@ -80,12 +78,30 @@ a:hover, a:focus
   background: #f4f4f4 !important;
   color: #111;
 }
+.nav-link:active{
+  background: #f4f4f4 !important;
+  color: #111;
+  text-decoration: underline;
+}
 .navbar-collapse{
   justify-content: flex-end;
 }
 .navbar-toggler{
   background:#424242 !important;
 }
+
 .navbar-toggler:hover{
-  background-color:#cfcfcf;
+  background:#8a8a8a !important;
+}
+.navbar-toggler-icon{
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #D0D4DC;
+}
+.navbar-toggler-icon:hover{
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #333;
 }
