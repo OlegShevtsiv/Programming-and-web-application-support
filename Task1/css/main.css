@@ -46,7 +46,6 @@ a:hover, a:focus
 {
   color:#7b7b7b;
   text-decoration: none;
-  outline: 0;
 }
 
 .navbar
@@ -118,10 +117,30 @@ a:hover, a:focus
 .thumb img:hover {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
+
 }
 
 .thumb {
   padding: 5px;
+}
+
+.thumb h5.describe
+{
+  font-family: "Lato";
+  margin-bottom: 1px;
+}
+
+#information p.text
+{
+  font-size: 18px;
+  text-align: justify;
+
+}
+
+.pict
+{
+  height: 220px;
+  width: 400px;
 }
 
 #bottom
