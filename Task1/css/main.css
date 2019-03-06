@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Raleway');
 body
 {
-  /* background-image: url(../image/Mercedes-Benz-background.png);
-  background-attachment: relative;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
-
-
   background-color: #f2f2f2;
   font-family: 'Lato';
   font-weight: 400;
@@ -87,9 +79,13 @@ a:hover, a:focus
 .navbar-toggler{
   background:#424242 !important;
 }
-
-.navbar-toggler:hover{
+/* .navbar-toggler:hover{
   background:#8a8a8a !important;
+} */
+hr
+{
+  border-width:medium;
+  border-color: #4d4d4d;
 }
 .navbar-toggler-icon{
   width: 0;
@@ -104,6 +100,7 @@ a:hover, a:focus
   border-top: 20px solid #333;
 }
 
+
 .thumb img
 {
   -webkit-filter: grayscale(0);
@@ -117,7 +114,6 @@ a:hover, a:focus
 .thumb img:hover {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
-
 }
 
 .thumb {
@@ -134,7 +130,6 @@ a:hover, a:focus
 {
   font-size: 18px;
   text-align: justify;
-
 }
 
 .pict
