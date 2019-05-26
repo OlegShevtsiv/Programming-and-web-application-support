@@ -2,6 +2,9 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const expressValidator = require('express-validator');
+const flash  = require('connect-flash');
+const session = require('express-session');
 
 
 mongoose.connect('mongodb://localhost/Task2Db');
@@ -32,8 +35,39 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //set public folder
-
 app.use(express.static(path.join(__dirname, 'public')));
+
+//express session midlewhare
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
+
+app.use(require('connect-flash')());
+app.use(function(req, res, next){
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
+
+app.use(expressValidator({
+  errorFormatter: function(param, msg, value){
+    var namespace = param.split('.')
+    , root = namespace.shift()
+    , formParam = root;
+    while(namespace.lenght)
+    {
+      formParam += '[' + namespace.shift() + ']';
+    }
+    return
+    {
+      param : formParam,
+      msg = msg,
+      value = value
+    };
+  }
+}));
+
 
 // Home route
 app.get('/', function(req, res)
@@ -51,42 +85,11 @@ app.get('/', function(req, res)
   });
 });
 
-//get single article
-app.get('/article/:id', function(req, res){
-  Article.findById(req.params.id, function(err, article){
-     res.render('article', {
-       article:article
-     });
-  });
-});
-
-
-
-// add route
-app.get('/articles/add', function(req, res)
-{
-  res.render('add_article', {
-    title: 'Add article'
-  });
-});
-
-//add submit post route
-app.post('/articles/add', function(req, res){
-  let article = new Article();
-  article.title = req.body.title;
-  article.author = req.body.author;
-  article.body = req.body.body;
-
-  article.save(function(err){
-    if(err){
-      console.log(err);
-      return;
-    }
-    else{
-      res.redirect('/');
-    }
-  });
-});
+//route files
+let articles = require('./routes/articles');
+let users = require('./routes/users');
+app.use('/articles', articles);
+app.use('/users', users);
 
 
 //start server
