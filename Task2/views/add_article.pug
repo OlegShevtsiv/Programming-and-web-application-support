@@ -4,12 +4,12 @@ block content
     h1 #{title}
     form(method='POST', action='/articles/add')
       #form-group
-        label Title:
-        input.form-control(name='title', type='text')
+        label Model:
+        input.form-control(name='model', type='text')
       #form-group
-        label Author:
-        input.form-control(name='author', type='text')
+        label Cost:
+        input.form-control(name='cost', type='text')
       #form-group
-        label Body:
-        textarea.form-control(name='body', type='text')
-      input.btn.btn-success(type='submit', value='Add')
+        label Details:
+        textarea.form-control(name='details', type='text')
+      input.btn.btn-success.my-3(type='submit', value='Add')

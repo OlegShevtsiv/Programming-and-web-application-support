@@ -1,7 +1,8 @@
 doctype html
 html
   head
-    title task2
+    title Mercedes shop
+    link(rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
     link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
     link(rel='stylesheet' href='/css/style.css')
 
@@ -15,24 +16,41 @@ html
         #navbarsExampleDefault.collapse.navbar-collapse
           ul.navbar-nav.mr-auto
             li.nav-item
-              a.nav-link(href='C:/Users/Admin/Desktop/Programming-and-web-application-support/Task1/index.html') About
-            li.nav-item
-              a.nav-link(href='/articles/add') Add Article
-          form.form-inline.my-2.my-lg-0
-            input.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search')
-            button.btn.btn-primary.my-2.my-sm-0(type='submit') Search
+              a.nav-link(href="C:/Users/mac/Desktop/Programming-and-web-application-support/Task1/index.html") About
+            if user
+              if user.role == 'admin'
+                li.nav-item
+                  a.nav-link(href='/articles/add') Add Auto
+          ul.nav.navbar-nav.navbar-right
+            if user 
+              li.nav-item
+                a.nav-link.text-white.px-3 Hello #{user.name} !
+              li.nav-item
+                a.nav-link.btn.btn-danger.text-white(href="/users/logout") Logout
+            else
+              li.nav-item
+                a.nav-link.btn.btn-primary.text-white(href='/users/register') Sign up
+              li.nav-item
+                a.nav-link(href='/users/login') Login
+          //- form.form-inline.my-2.my-lg-0
+          //-   input.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search')
+          //-   button.btn.btn-primary.my-2.my-sm-0(type='submit') Search
+          
 
     
     
     .container.body-content.py-5.my-5
-      !=messages('message', locals)
+      != messages('message', locals)
       if errors
-          div(class="alert alert-danger") Fill in all required fields!
+        each error in errors
+          div(class="alert alert-danger") #{error.msg}
       block content
       br
-      hr
-      footer
-        p Copyright &copy; 2019 Shevtsiv Oleh
+      .container.body-content
+        hr
+        footer.container-fluid.position-fixed.fixed-bottom.bg-dark.text-white.text-center.py-3
+          p.h6.my-0
+            | © 2019 - Mercedes shop. Created by: Oleg Shevtsiv
         
     script(src='/bower_components/jquery/dist/jquery.js')
     script(src='/bower_components/bootstrap/dist/js/bootstrap.js')

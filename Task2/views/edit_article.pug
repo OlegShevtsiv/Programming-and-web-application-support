@@ -4,13 +4,13 @@ block content
     h1 #{title}
     form(method='POST', action='/articles/edit/'+article._id)
       #form-group
-        label Title:
-        input.form-control(name='title', type='text', value=article.title)
+        label Model:
+        input.form-control(name='model', type='text', value=article.model)
       #form-group
-        label Author:
-        input.form-control(name='author', type='text', value=article.author)
+        label Cost:
+        input.form-control(name='cost', type='text', value=article.cost)
       #form-group
-        label Body:
-        textarea.form-control(name='body', type='text')= article.body
+        label Details:
+        textarea.form-control(name='details', type='text')= article.details
       
-      input.btn.btn-success(type='submit', value='Save changes')
+      input.btn.btn-success.my-3(type='submit', value='Save changes')

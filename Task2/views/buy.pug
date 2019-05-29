@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1 Ordering #{article.model}
+    form(method='POST', action='/articles/buy/'+article._id)
+      #form-group
+        label Enter bank account number:
+        input.form-control(name='bankNumber', type='text')
+      #form-group
+        label Enter cvv2:
+        input.form-control(name='cvv2', type='text')
+      #form-group
+        label Enter your phone number:
+        input.form-control(name='phone', type='text')
+      #form-group
+        label Enter code:
+        input.form-control(name='code', type='text')
+      
+      input.btn.btn-success.my-3(type='submit', value='Submit')

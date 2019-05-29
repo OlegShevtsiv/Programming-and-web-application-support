@@ -2,17 +2,16 @@ let mongoose = require('mongoose');
 
 //article schema
 let articleSchema = new mongoose.Schema({
-    title:
+    model:
     {
       type:String,
       required:true
     },
-    author:
-    {
+    cost:{
       type:String,
-      require:true
+      required:true
     },
-    body:
+    details:
     {
       type:String,
       require:true
